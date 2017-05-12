@@ -5,7 +5,7 @@ function submit(){
   window.location = "teak1.github.io/Dynablock/submit.html?"+json;
 }
 window.onload=function(){
-var search = window.location.search.split("").shift().join("");
+var search = decodeURI(window.location.search.substring(1))
 search = JSON.parse(search);
 url = search.url;
 document.getElementById("url").innerHTML=search.url;
